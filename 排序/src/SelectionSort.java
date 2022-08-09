@@ -1,10 +1,6 @@
 
 public class SelectionSort {
-    public static void swap(int[] arr, int i,int j){
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
+
 
     public static  void SelectionSort(int[] arr) {
         // 不用排序
@@ -19,20 +15,15 @@ public class SelectionSort {
             for (int j = i+1; j < n ; j++) {
                 minVal = arr[j] < arr[minVal] ? j : minVal;
             }
-            swap(arr,i,minVal); // 交换找到的最小值跟当前i对应的数的位置
+            Util.swap(arr,i,minVal); // 交换找到的最小值跟当前i对应的数的位置
         }
     }
-    public  static  void  printArr(int[] arr){
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]+" ");
-        }
-        System.out.println();
-    }
+
     public static void main(String[] args) {
         int[] arr = {9,2,3,5,7,4};
-        printArr(arr);
+        Util.printArr(arr);
         SelectionSort(arr);
-        printArr(arr);
+        Util.printArr(arr);
 
     }
 
